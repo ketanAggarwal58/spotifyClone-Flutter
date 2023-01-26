@@ -1,6 +1,8 @@
+import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-import 'list.dart';
+import 'package:spotify_flutter/album/AlbumScreen.dart';
+import '../model/list.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -326,45 +328,50 @@ class HomePage extends StatelessWidget {
                 itemBuilder: (BuildContext context, int index) {
                   return Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: ListTile(
-                      trailing: Container(
-                        width: size.width * 0.2,
-                        child: Row(children: [
-                          Text(
-                            '${list[index].rating}',
-                            style: TextStyle(
+                    child: GestureDetector(
+                      onTap: () {
+                        Get.to(AlbumScreen(song: list[index]));
+                      },
+                      child: ListTile(
+                        trailing: Container(
+                          width: size.width * 0.2,
+                          child: Row(children: [
+                            Text(
+                              '${list[index].rating}',
+                              style: TextStyle(
+                                color: Colors.amber,
+                              ),
+                            ),
+                            Icon(
+                              Icons.star,
                               color: Colors.amber,
                             ),
+                            Spacer(),
+                            IconButton(
+                              onPressed: () =>
+                                  _showActionSheet(context, list[index]),
+                              icon: Icon(Icons.more_horiz),
+                              color: Colors.white,
+                            ),
+                          ]),
+                        ),
+                        leading: Container(
+                          child: Image.asset(list[index].image!),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.all(Radius.circular(20)),
                           ),
-                          Icon(
-                            Icons.star,
-                            color: Colors.amber,
-                          ),
-                          Spacer(),
-                          IconButton(
-                            onPressed: () =>
-                                _showActionSheet(context, list[index]),
-                            icon: Icon(Icons.more_horiz),
+                        ),
+                        title: Text(
+                          '${list[index].albumName}',
+                          style: TextStyle(
                             color: Colors.white,
                           ),
-                        ]),
-                      ),
-                      leading: Container(
-                        child: Image.asset(list[index].image!),
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.all(Radius.circular(20)),
                         ),
-                      ),
-                      title: Text(
-                        '${list[index].albumName}',
-                        style: TextStyle(
-                          color: Colors.white,
-                        ),
-                      ),
-                      subtitle: Text(
-                        '${list[index].artist}',
-                        style: TextStyle(
-                          color: Colors.grey,
+                        subtitle: Text(
+                          '${list[index].artist}',
+                          style: TextStyle(
+                            color: Colors.grey,
+                          ),
                         ),
                       ),
                     ),
