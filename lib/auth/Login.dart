@@ -1,14 +1,16 @@
+import 'package:get/get.dart';
 import 'package:flutter/material.dart';
+import 'package:spotify_flutter/home/Hompage.dart';
 import 'package:spotify_flutter/auth/components/CustomTextField.dart';
 
-class Homepage extends StatefulWidget {
-  const Homepage({Key? key}) : super(key: key);
+class LogIn extends StatefulWidget {
+  const LogIn({Key? key}) : super(key: key);
 
   @override
-  _HomepageState createState() => _HomepageState();
+  _LogInState createState() => _LogInState();
 }
 
-class _HomepageState extends State<Homepage> {
+class _LogInState extends State<LogIn> {
   bool rememberMe = true;
   @override
   Widget build(BuildContext context) {
@@ -118,10 +120,11 @@ class _HomepageState extends State<Homepage> {
                       ),
                     ),
                     ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Get.to(HomePage());
+                      },
                       style: ElevatedButton.styleFrom(
-                        onPrimary: Colors.greenAccent[700],
-                        primary: Colors.greenAccent[700],
+                        backgroundColor: Colors.greenAccent[700],
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.all(
                             Radius.circular(20),
@@ -229,9 +232,10 @@ class _HomepageState extends State<Homepage> {
             top: 78,
             left: 45,
             child: Container(
-                height: size.height * 0.1,
-                width: size.width * 0.8,
-                child: Image.asset('assets/image/Spotify_Logo_RGB_White.png')),
+              height: size.height * 0.1,
+              width: size.width * 0.8,
+              child: Image.asset('assets/image/Spotify_Logo_RGB_White.png'),
+            ),
           ),
           Positioned(
             top: 190,

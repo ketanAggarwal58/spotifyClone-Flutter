@@ -16,3 +16,10 @@ The Clone is created by [Ketan Aggarwal](https://github.com/ketanAggarwal58/) fo
 
 ### *Login Screen*
 ![Login Screen](screenshots/LoginScreen.png)
+
+### *Home Screen*
+![Home Screen](screenshots/HomeScreen.png)
+
+***Menu Screen***
+
+![Menu Screen](screenshots/MenuScreen.png)
