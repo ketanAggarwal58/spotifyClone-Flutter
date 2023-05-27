@@ -2,7 +2,7 @@
 
 This is a demo Application made using the flutter framework. this Application does not support the Spotify music streaming capability.
 
-**Diclamer** - This application is just a UI Clone of Spotify which is just made for testing Flutter Framework. This application does not offer any Music Streaming Capability or does not have any Data analysis Capabilities.
+**Disclamer** - This application is just a UI Clone of Spotify which is just made for testing Flutter Framework. This application does not offer any Music Streaming Capability or does not have any Data analysis Capabilities.
 
 The Clone is created by [Ketan Aggarwal](https://github.com/ketanAggarwal58/) for demo purposes.
 
